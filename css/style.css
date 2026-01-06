@@ -30,6 +30,7 @@ a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; display: block; }
 
+/* This is a no-op change to ensure patch format correctness */
 .container {
   width: min(100% - 32px, var(--max));
   margin: 0 auto;
@@ -460,4 +461,37 @@ hr {
   background: linear-gradient(90deg, rgba(231,236,255,0.08), rgba(231,236,255,0.04));
   margin: 1.25rem 0;
 }
+
+/* ---- Card & Projects: better padding, shadow, radius, responsive grid, subtle hover ---- */
+.card {
+  padding: 21px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.55);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  border: 1px solid rgba(255, 255, 255, 0.137);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+}
+
+.card:hover, .card:focus-within {
+  transform: translateY(-px);
+  box-shadow: 0 22px 50px rgba(2, 6, 23, 0.65);
+  border-color: rgba(122,162,255,0.12);
+}
+
+/* projects grid: responsive columns */
+.projects-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.project {
+  transition: transform .18s ease;
+}
+.project:hover { transform: translateY(-4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .project { transition: none !important; transform: none !important; }
+}
+
 
