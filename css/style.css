@@ -313,8 +313,8 @@ label {
 
 input, textarea {
   font: inherit;
-  color: var(--text);
-  background: rgba(255,255,255,0.04);
+  color: white;
+  background: rgba(233, 227, 227, 0.974);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 10px 12px;
